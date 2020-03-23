@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Baloo Da 2', cursive;
+}
+body{
+    font-size: 1.6rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 2%;
+    position: sticky;
+    top: 0;
+}
+nav > h2 {
+    font-family: 'Permanent Marker', cursive;
+}
+.navLinks {
+    display: flex;
+}
+.navLinks > a{
+    padding: 0 5%;
+    white-space: nowrap;
+}
+main{
+    margin-top: 15%;
+}
+.collection{
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.mouseDiv{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5%;
+}
+.mouseDiv > h6 {
+    font-size: 3rem;
+    margin: 0;
+}
+.mouseDiv > img {
+    max-width:100%;
+}
+.mouseDiv > p {
+    margin: 0;
+}
+

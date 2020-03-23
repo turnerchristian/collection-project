@@ -1,32 +1,36 @@
 <?php
-
-$db = new PDO('mysql:host=DB;dbname=collectionproject', 'root', 'password');
-$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-
-$query = $db->query("SELECT * FROM `computerMice`");
-$mice = $query->fetchAll();
+require_once('functions.php');
+$db = linkDB();
+$mice = fetchDB($db);
 
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-<body
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Mouse Collection</title>
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link rel="stylesheet" type="text/css" href="collection.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Da+2|Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+<body>
     <nav>
-    <h2>Mouse Collection</h2>
-        <a>Collection</a>
-        <a>Coming soon!</a>
+    <h2>The Mouse Collection</h2>
+        <div class="navLinks">
+            <a>Collection</a>
+            <a>Coming soon!</a>
+        </div>
     </nav>
 <main>
-    <?php
-    foreach ($mice as $mouse) {
-        echo '<h6>' . $mouse["name"] . '</h6>';
-        echo '<p>Brand: ' . $mouse["brand"] . '<p>';
-        echo '<p>Weight: ' . $mouse["weight"] . 'g<p>';
-    }
-    ?>
+    <div class ="collection">
+            <?php
+            echoMice($mice);
+            ?>
+    </div>
 </main>
-
 
 </body>
 </html>
