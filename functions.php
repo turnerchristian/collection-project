@@ -1,6 +1,4 @@
 <?php
-$db = new PDO('mysql:host=DB;dbname=collectionproject', 'root', 'password');
-$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
 function echoMice(array $mice)
 {
@@ -14,7 +12,8 @@ function echoMice(array $mice)
         echo '</div>';
     }
 }
-function linkDB(){
+function linkDB()
+{
     $db = new PDO('mysql:host=DB;dbname=collectionproject', 'root', 'password');
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     return $db;

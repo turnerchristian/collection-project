@@ -12,15 +12,14 @@ $mice = fetchDB($db);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <title>Mouse Collection</title>
-    <link rel="stylesheet" type="text/css" href="normalize.css">
     <link rel="stylesheet" type="text/css" href="collection.css">
+    <link rel="stylesheet" type="text/css" href="normalize.css">
     <link href="https://fonts.googleapis.com/css?family=Baloo+Da+2|Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
     <h2>The Mouse Collection</h2>
         <div class="navLinks">
-            <a>Collection</a>
             <a>Coming soon!</a>
         </div>
     </nav>
