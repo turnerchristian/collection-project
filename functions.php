@@ -1,18 +1,19 @@
 <?php
 
-function displayMouseOnPage(array $mice)
+function displayMouseOnPage(array $mice): string
 {
-
+    $echo = '';
     foreach ($mice as $mouse) {
-        echo '<div class="mouseDiv">';
-        echo '<h6>' . $mouse["name"] . '</h6>';
-        echo "<img src='" . $mouse["image"] . "'>";
-        echo '<p>Brand: ' . $mouse["brand"] . '<p>';
+        $echo .= '<div class="mouseDiv">' .
+            '<h6>' . $mouse["name"] . '</h6>' .
+            "<img src='" . $mouse["image"] . "'>" .
+            '<p>Brand: ' . $mouse["brand"] . '<p>';
         if (!empty($mouse['weight'])) {
-            echo '<p>Weight: ' . $mouse["weight"] . 'g<p>';
+            $echo .= '<p>Weight: ' . $mouse["weight"] . 'g<p>';
         }
-        echo '</div>';
+        $echo .= '</div>';
     }
+    return $echo;
 }
 function linkDB()
 {
@@ -24,5 +25,5 @@ function getDataFromDB(PDO $db)
 {
     $query = $db->query("SELECT * FROM `computerMice` WHERE (`name` IS NOT NULL AND `brand` IS NOT NULL);");
     return $query->fetchAll();
-
 }
+

@@ -1,12 +1,10 @@
 <?php
-
 require_once('./functions.php');
 
 use PHPUnit\Framework\TestCase;
 
 class DisplayMouseOnPageTest extends TestCase
 {
-
     public function testThrowsErrorWhenGivenString()
     {
         $this->expectException(TypeError::class);
