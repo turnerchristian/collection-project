@@ -18,7 +18,9 @@ class DisplayMouseOnPageTest extends TestCase
 
         displayMouseOnPage();
     }
-    public function testSuccessDisplayMouseOnPage(){
+
+    public function testSuccessDisplayMouseOnPage()
+    {
         $actualInput[0] = ['name' => 'Razer Viper',
             'brand' => 'Razer',
             'weight' => 70,
