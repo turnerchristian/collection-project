@@ -18,4 +18,13 @@ class DisplayMouseOnPageTest extends TestCase
 
         displayMouseOnPage();
     }
+    public function testSuccessDisplayMouseOnPage(){
+        $actualInput[0] = ['name' => 'Razer Viper',
+            'brand' => 'Razer',
+            'weight' => 70,
+            'image' => 'https://images.maxgaming.com/data/product/1200f960/razer_viper_ambidextrios_gamingmus_6.png'];
+        $actual = displayMouseOnPage($actualInput);
+        $expected = "<div class=\"mouseDiv\"><h6>Razer Viper</h6><img src='https://images.maxgaming.com/data/product/1200f960/razer_viper_ambidextrios_gamingmus_6.png'><p>Brand: Razer<p><p>Weight: 70g<p></div>";
+        $this->assertEquals($actual, $expected);
+    }
 }
