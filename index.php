@@ -1,9 +1,7 @@
 <?php
 require_once('functions.php');
 $db = linkDB();
-$mice = fetchDB($db);
-
-
+$mice = getDataFromDB($db);
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +24,7 @@ $mice = fetchDB($db);
 <main>
     <div class ="collection">
             <?php
-            echoMice($mice);
+            displayMouseOnPage($mice);
             ?>
     </div>
 </main>

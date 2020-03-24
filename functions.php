@@ -1,6 +1,6 @@
 <?php
 
-function echoMice(array $mice)
+function displayMouseOnPage(array $mice)
 {
 
     foreach ($mice as $mouse) {
@@ -8,7 +8,9 @@ function echoMice(array $mice)
         echo '<h6>' . $mouse["name"] . '</h6>';
         echo "<img src='" . $mouse["image"] . "'>";
         echo '<p>Brand: ' . $mouse["brand"] . '<p>';
-        echo '<p>Weight: ' . $mouse["weight"] . 'g<p>';
+        if (!empty($mouse['weight'])) {
+            echo '<p>Weight: ' . $mouse["weight"] . 'g<p>';
+        }
         echo '</div>';
     }
 }
@@ -18,9 +20,9 @@ function linkDB()
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     return $db;
 }
-function fetchDB($db)
+function getDataFromDB(PDO $db)
 {
-    $query = $db->query("SELECT * FROM `computerMice`");
+    $query = $db->query("SELECT * FROM `computerMice` WHERE (`name` IS NOT NULL AND `brand` IS NOT NULL);");
     return $query->fetchAll();
 
 }
