@@ -15,15 +15,17 @@ function displayMouseOnPage(array $mice): string
     }
     return $echo;
 }
-function linkDB()
+
+function linkDB(): PDO
 {
     $db = new PDO('mysql:host=DB;dbname=collectionproject', 'root', 'password');
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     return $db;
 }
-function getDataFromDB(PDO $db)
+
+function getDataFromDB(PDO $db): array
 {
-    $query = $db->query("SELECT * FROM `computerMice` WHERE (`name` IS NOT NULL AND `brand` IS NOT NULL);");
+    $query = $db->query("SELECT `name`, `brand`, `image`, `weight` FROM `computerMice` WHERE (`name` IS NOT NULL AND `brand` IS NOT NULL);");
     return $query->fetchAll();
 }
 
