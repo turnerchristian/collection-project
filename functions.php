@@ -22,7 +22,7 @@ function linkDB()
 }
 function getDataFromDB(PDO $db)
 {
-    $query = $db->query("SELECT * FROM `computerMice` WHERE (`name` IS NOT NULL AND `brand` IS NOT NULL)");
+    $query = $db->query("SELECT * FROM `computerMice` WHERE (`name` IS NOT NULL AND `brand` IS NOT NULL);");
     return $query->fetchAll();
 
 }
