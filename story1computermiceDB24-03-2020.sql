@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.29)
 # Database: collectionproject
-# Generation Time: 2020-03-23 14:25:43 +0000
+# Generation Time: 2020-03-24 15:07:45 +0000
 # ************************************************************
 
 
@@ -27,21 +27,24 @@ DROP TABLE IF EXISTS `computerMice`;
 
 CREATE TABLE `computerMice` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL DEFAULT '',
-  `brand` varchar(255) NOT NULL DEFAULT '',
+  `name` varchar(255) DEFAULT NULL,
+  `brand` varchar(255) DEFAULT NULL,
   `weight` smallint(5) DEFAULT NULL,
   `is_wireless` tinyint(2) DEFAULT '0',
+  `image` varchar(255) DEFAULT 'https://images.maxgaming.com/data/product/1200f960/razer_viper_ultimate_tradlos_gamingmus_med_laddningsstation.jpg',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 LOCK TABLES `computerMice` WRITE;
 /*!40000 ALTER TABLE `computerMice` DISABLE KEYS */;
 
-INSERT INTO `computerMice` (`id`, `name`, `brand`, `weight`, `is_wireless`)
+INSERT INTO `computerMice` (`id`, `name`, `brand`, `weight`, `is_wireless`, `image`)
 VALUES
-	(1,'Razer Viper','Razer',70,0),
-	(2,'Razer Viper Ultimate','Razer',74,1),
-	(3,'G Pro Wireless','Logitech',80,1);
+	(1,'Razer Viper','Razer',70,0,'https://images.maxgaming.com/data/product/1200f960/razer_viper_ambidextrios_gamingmus_6.png'),
+	(2,'Razer Viper Ultimate','Razer',74,1,'https://images.maxgaming.com/data/product/1200f960/razer_viper_ultimate_tradlos_gamingmus_med_laddningsstation.jpg'),
+	(3,'G Pro Wireless','Logitech',80,1,'https://images.maxgaming.com/data/product/1200f960/logitech_g_pro_tradlos.jpg'),
+	(4,'Zowie FK1+','Zowie\n',94,0,'https://images.maxgaming.com/data/product/1200f960/zowie_by_benq_fk1_mouse_6.jpg'),
+	(8,'test 599',NULL,NULL,0,'https://images.maxgaming.com/data/product/1200f960/razer_viper_ultimate_tradlos_gamingmus_med_laddningsstation.jpg');
 
 /*!40000 ALTER TABLE `computerMice` ENABLE KEYS */;
 UNLOCK TABLES;
