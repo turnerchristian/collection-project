@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Baloo Da 2', cursive;
+}
+
+body {
+    font-size: 1.6rem;
+    background-color: aquamarine;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 2%;
+    position: sticky;
+    top: 0;
+    background-color: aquamarine;
+}
+
+nav > h2 {
+    font-family: 'Permanent Marker', cursive;
+}
+
+.navLinks {
+    display: flex;
+}
+
+.navLinks > a {
+    padding: 0 5%;
+    white-space: nowrap;
+}
+
+main {
+    margin-top: 15%;
+    padding: 0 2%;
+}
+
+.collection {
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.mouseDiv {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5%;
+}
+
+.mouseDiv > h6 {
+    font-size: 3rem;
+    margin: 0 0 10px 0;
+}
+
+.mouseDiv > img {
+    max-width: 90%;
+    border-radius: 5%;
+    margin-bottom: 10px;
+}
+
+.mouseDiv > p {
+    margin: 0;
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .collection {
+        flex-direction: column;
+        align-items: center;
+    }
+}
