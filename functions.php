@@ -1,5 +1,4 @@
 <?php
-
 function displayMouseOnPage(array $mice): string
 {
     $echo = '';
@@ -7,9 +6,12 @@ function displayMouseOnPage(array $mice): string
         $echo .= '<div class="mouseDiv">' .
             '<h6>' . $mouse["name"] . '</h6>' .
             "<img src='" . $mouse["image"] . "'>" .
-            '<p>Brand: ' . $mouse["brand"] . '<p>';
-        if (!empty($mouse['weight'])) {
-            $echo .= '<p>Weight: ' . $mouse["weight"] . 'g<p>';
+            '<p>Brand: ' . $mouse["brand"] . '<p>' .
+            '<p>Weight: ' . $mouse["weight"] . 'g<p>';
+        if ($mouse['is_wireless'] == 1) {
+            $echo .= '<p>Type: Wireless<p>';
+        } else {
+            $echo .= '<p>Type: Wired<p>';
         }
         $echo .= '</div>';
     }
