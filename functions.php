@@ -37,8 +37,7 @@ function formatName(string $name): string
     return $name;
 }
 
-
-function validateInfo(string $mouseName,string $mouseBrand,string $mouseWeight)
+function validateInfo(string $mouseName,string $mouseBrand,string $mouseWeight): string
 {
     if ((strlen($mouseName) > 100) || (strlen($mouseBrand) > 50) || ($mouseWeight > 1000) || ($mouseWeight < 1)) {
         return 'inputLength';
@@ -47,7 +46,7 @@ function validateInfo(string $mouseName,string $mouseBrand,string $mouseWeight)
     } elseif ((!(preg_match("/^([a-zA-Z0-9- ]+)$/", $mouseName))) || (!(preg_match("/^([a-zA-Z0-9- ]+)$/", $mouseBrand)))) {
         return 'invalidName';
     } else {
-        return true;
+        return 'true';
     }
 
 }

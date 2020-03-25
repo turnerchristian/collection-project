@@ -15,12 +15,12 @@ if (!empty($_POST['mouseName']) && !empty($_POST['mouseBrand']) && !empty($_POST
         $isWireless = 0;
     }
 } else {
-    header('Location: http://localhost:1234/collection-project/inputPage.php?error=missing');
+    header('Location: ./inputPage.php?error=missing');
     exit;
 }
 
-if (validateInfo($_POST['mouseName'], $_POST['mouseBrand'], $_POST['mouseWeight']) !== true) {
-    header('Location: http://localhost:1234/collection-project/inputPage.php?error=' . validateInfo($_POST['mouseName'], $_POST['mouseBrand'], $_POST['mouseWeight'], $_POST['wirelessInput']));
+if (validateInfo($_POST['mouseName'], $_POST['mouseBrand'], $_POST['mouseWeight']) !== 'true') {
+    header('Location: ./inputPage.php?error=' . validateInfo($_POST['mouseName'], $_POST['mouseBrand'], $_POST['mouseWeight'], $_POST['wirelessInput']));
     exit;
 } else {
     $mouseName = formatName($mouseName);
