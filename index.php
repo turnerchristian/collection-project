@@ -1,5 +1,7 @@
 <?php
 require_once('functions.php');
+require_once('session.php');
+
 $db = linkDB();
 $mice = getDataFromDB($db);
 ?>
@@ -11,6 +13,7 @@ $mice = getDataFromDB($db);
     <?php
 require_once('HTMLhead.php');
 ?>
+    <title>Mouse Collection</title>
 </head>
 
 <body>
