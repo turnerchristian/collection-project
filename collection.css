@@ -66,6 +66,8 @@ main {
 .mouseDiv > h6 {
     font-size: 3rem;
     margin: 0 0 10px 0;
+    text-align: center;
+    flex-grow: 100;
 }
 
 img {
@@ -79,6 +81,7 @@ img {
 
 .mouseDiv > p {
     margin: 0;
+    font-size: 2rem;
 }
 
 /*======================================= Input Page =======================================*/
@@ -130,6 +133,10 @@ label > input {
     align-self: flex-start;
     padding: 8px 5px 5px 5px;
     border-radius: 2px;
+}
+
+.error {
+    font-weight: bold;
 }
 
 /*======================================= Media Queries =======================================*/
