@@ -9,34 +9,41 @@ html {
 
 body {
     font-size: 1.6rem;
-    background-color: aquamarine;
+    background-color: #77e6c1;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 2%;
+    width: 100vw;
+    padding: 0 2%;
     position: sticky;
     top: 0;
     background-color: aquamarine;
 }
 
-nav > h2 {
+h2 {
     font-family: 'Permanent Marker', cursive;
 }
 
 .navLinks {
     display: flex;
+    text-transform: uppercase;
 }
 
 .navLinks > a {
     padding: 0 5%;
     white-space: nowrap;
+    color: black;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 8px 10px 5px 10px;
 }
 
 main {
-    margin-top: 15%;
+    margin-top: 100px;
     padding: 0 2%;
 }
 
@@ -61,9 +68,12 @@ main {
     margin: 0 0 10px 0;
 }
 
+img {
+    border-radius: 5%;
+}
+
 .mouseDiv > img {
     max-width: 90%;
-    border-radius: 5%;
     margin-bottom: 10px;
 }
 
@@ -71,10 +81,80 @@ main {
     margin: 0;
 }
 
+/*======================================= Input Page =======================================*/
+
+.inputPageMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.inputPageMain > h2 {
+    margin: 50px 0;
+}
+
+.inputPageDiv {
+    display: flex;
+    width: 95%;
+}
+
+.inputPageForm {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.inputPageForm > label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+label > input {
+    border-radius: 2px;
+}
+
+.inputPageImgDiv {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+#inputPageImg {
+    max-width: 100%;
+}
+
+#inputPageSubmit {
+    align-self: flex-start;
+    padding: 8px 5px 5px 5px;
+    border-radius: 2px;
+}
+
+/*======================================= Media Queries =======================================*/
+
 @media only screen and (max-width: 1000px) {
 
     .collection {
         flex-direction: column;
         align-items: center;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    .inputPageDiv{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #inputPageSubmit {
+        margin-bottom: 50px;
+        align-self: center;
+    }
+
+    .inputPageForm, .inputPageImgDiv {
+        width: 95%;
     }
 }
