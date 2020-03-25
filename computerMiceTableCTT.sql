@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.29)
 # Database: collectionproject
-# Generation Time: 2020-03-25 14:12:08 +0000
+# Generation Time: 2020-03-25 15:59:54 +0000
 # ************************************************************
 
 
@@ -44,7 +44,10 @@ VALUES
 	(2,'Razer Viper Ultimate','Razer',74,1,'https://images.maxgaming.com/data/product/1200f960/razer_viper_ultimate_tradlos_gamingmus_med_laddningsstation.jpg'),
 	(3,'G Pro Wireless','Logitech',80,1,'https://images.maxgaming.com/data/product/1200f960/logitech_g_pro_tradlos.jpg'),
 	(4,'Zowie FK1+','Zowie\n',94,0,'https://images.maxgaming.com/data/product/1200f960/zowie_by_benq_fk1_mouse_6.jpg'),
-	(5,'Finalmouse Ultralight 2 - Cape Town','Finalmouse',47,0,'https://images.maxgaming.com/data/product/600f480/finalmouse_ultralight_2_-_cape_town.png');
+	(5,'Finalmouse Ultralight 2 - Cape Town','Finalmouse',47,0,'https://images.maxgaming.com/data/product/600f480/finalmouse_ultralight_2_-_cape_town.png'),
+	(7,'Pulsefire Dart','HyperX',110,1,'https://i.imgur.com/yvzx8H8.jpg'),
+	(8,'Glorious Model O','Glorious Gaming',58,0,'https://images.maxgaming.com/data/product/600f480/glorious_model_o-_gamingmus_svart.jpg'),
+	(9,'Glorious Model D - White','Glorious Gaming',69,0,'https://images.maxgaming.com/data/product/600f480/glorious_model_d_gamingmus_vit.jpg');
 
 /*!40000 ALTER TABLE `computerMice` ENABLE KEYS */;
 UNLOCK TABLES;
