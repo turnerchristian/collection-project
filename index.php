@@ -11,6 +11,7 @@ $mice = getDataFromDB($db);
     <?php
 require_once('HTMLhead.php');
 ?>
+    <title>Mouse Collection</title>
 </head>
 
 <body>
