@@ -28,11 +28,11 @@ require_once('session.php');
             </label>
             <label>
                 Brand:
-                <input name="mouseBrand" type="text" placeholder = "Enter Mouse Brand Here" required maxlength="50"/>
+                <input name="mouseBrand" type="text" placeholder = "Enter Mouse Brand Here"maxlength="50" required/>
             </label>
             <label>
                 Weight (g):
-                <input name="mouseWeight" type="text" pattern="[0-9]*" placeholder= "Range: 1-1000 (g)" maxlength="10"/>
+                <input name="mouseWeight" type="text" pattern="[0-9]*" placeholder= "Range: 1-1000 (g)" maxlength="10" required/>
             </label>
             <label id="wirelessLabel">
                 Is it Wireless?
