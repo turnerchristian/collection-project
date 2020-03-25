@@ -24,9 +24,10 @@ class DisplayMouseOnPageTest extends TestCase
         $actualInput[0] = ['name' => 'Razer Viper',
             'brand' => 'Razer',
             'weight' => 70,
-            'image' => 'https://images.maxgaming.com/data/product/1200f960/razer_viper_ambidextrios_gamingmus_6.png'];
+            'image' => 'https://images.maxgaming.com/data/product/1200f960/razer_viper_ambidextrios_gamingmus_6.png',
+            'is_wireless' => 0];
         $actual = displayMouseOnPage($actualInput);
-        $expected = "<div class=\"mouseDiv\"><h6>Razer Viper</h6><img src='https://images.maxgaming.com/data/product/1200f960/razer_viper_ambidextrios_gamingmus_6.png'><p>Brand: Razer<p><p>Weight: 70g<p></div>";
+        $expected = "<div class=\"mouseDiv\"><h6>Razer Viper</h6><img src='https://images.maxgaming.com/data/product/1200f960/razer_viper_ambidextrios_gamingmus_6.png'><p>Brand: Razer<p><p>Weight: 70g<p><p>Type: Wired<p></div>";
         $this->assertEquals($actual, $expected);
     }
 }
