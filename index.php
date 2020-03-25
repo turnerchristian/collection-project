@@ -1,5 +1,7 @@
 <?php
 require_once('functions.php');
+require_once('session.php');
+
 $db = linkDB();
 $mice = getDataFromDB($db);
 ?>
