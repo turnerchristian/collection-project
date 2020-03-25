@@ -23,6 +23,11 @@ require_once('HTMLhead.php');
     ?>
 </nav>
 <main>
+    <?php
+    if (!empty($_GET['success'])) {
+        echo '<p id="successMessage">' . $_SESSION['success']['mouseName'] . ' ' . $_SESSION['success'][$_GET['success']] . '</p>';
+    }
+    ?>
     <div class="collection">
         <?php
         echo displayMouseOnPage($mice);
