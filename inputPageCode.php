@@ -25,6 +25,8 @@ if (validateInfo($_POST['mouseName'], $_POST['mouseBrand'], $_POST['mouseWeight'
 } else {
     $mouseName = formatName($mouseName);
     $mouseBrand = formatName($mouseBrand);
+    $query = $db->prepare("INSERT INTO `computerMice` (`name` ,`brand`, `weight`, `is_wireless`) VALUES (?, ?, ?, ?)");
+    $result = $query -> execute([$mouseName, $mouseBrand, $mouseWeight, $isWireless]);
 }
 
 
