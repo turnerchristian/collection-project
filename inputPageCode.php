@@ -14,6 +14,8 @@ if (!empty($_POST['mouseName']) && !empty($_POST['mouseBrand']) && !empty($_POST
     } else {
         $isWireless = 0;
     }
+    $mouseName = formatName($mouseName);
+    $mouseBrand = formatName($mouseBrand);
 } else {
     header('Location: ./inputPage.php?error=missing');
     exit;
@@ -23,8 +25,24 @@ if (validateInfo($_POST['mouseName'], $_POST['mouseBrand'], $_POST['mouseWeight'
     header('Location: ./inputPage.php?error=' . validateInfo($_POST['mouseName'], $_POST['mouseBrand'], $_POST['mouseWeight'], $_POST['wirelessInput']));
     exit;
 } else {
-    $mouseName = formatName($mouseName);
-    $mouseBrand = formatName($mouseBrand);
+    $query = $db->prepare("SELECT `name` FROM `computerMice` WHERE `name` = ?");
+    $query->execute([$mouseName]);
+    $nameCheck = $query->fetch();
+    if (!empty($nameCheck)) {
+        header('Location: ./inputPage.php?error=exists');
+        exit;
+    } else {
+        $query = $db->prepare("INSERT INTO `computerMice` (`name` ,`brand`, `weight`, `is_wireless`) VALUES (?, ?, ?, ?)");
+        $result = $query->execute([$mouseName, $mouseBrand, $mouseWeight, $isWireless]);
+    }if ($result === true){
+        $_SESSION['success']['mouseName'] = $mouseName;
+        header('Location: ./index.php?success=mouseAdded');
+        exit;
+    } else {
+        header('Location: ./inputPage.php?error=server');
+        exit;
+    }
 }
+
 
 
