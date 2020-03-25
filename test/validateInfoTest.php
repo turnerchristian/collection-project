@@ -19,12 +19,14 @@ class validateInfoTest extends TestCase
 
         validateInfo();
     }
+
     public function testThrowsErrorWhenWrongTypeInserted()
     {
         $this->expectException(TypeError::class);
 
         validateInfo("Hello World!", [6]);
     }
+
     public function testSuccessValidateInfo()
     {
         $actual = validateInfo("Hello World", 'Hello again', 998);
