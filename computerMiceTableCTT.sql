@@ -6,8 +6,8 @@
 # https://github.com/sequelpro/sequelpro
 #
 # Host: 127.0.0.1 (MySQL 5.7.29)
-# Database: collectionproject
-# Generation Time: 2020-03-25 15:59:54 +0000
+# Database: collection.project
+# Generation Time: 2020-03-26 12:13:22 +0000
 # ************************************************************
 
 
@@ -29,7 +29,7 @@ CREATE TABLE `computerMice` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
   `brand` varchar(50) DEFAULT NULL,
-  `weight` smallint(4) DEFAULT NULL,
+  `weight` smallint(3) DEFAULT NULL,
   `is_wireless` tinyint(2) DEFAULT NULL,
   `image` varchar(255) NOT NULL DEFAULT 'https://i.imgur.com/yvzx8H8.jpg',
   PRIMARY KEY (`id`)
@@ -47,7 +47,8 @@ VALUES
 	(5,'Finalmouse Ultralight 2 - Cape Town','Finalmouse',47,0,'https://images.maxgaming.com/data/product/600f480/finalmouse_ultralight_2_-_cape_town.png'),
 	(7,'Pulsefire Dart','HyperX',110,1,'https://i.imgur.com/yvzx8H8.jpg'),
 	(8,'Glorious Model O','Glorious Gaming',58,0,'https://images.maxgaming.com/data/product/600f480/glorious_model_o-_gamingmus_svart.jpg'),
-	(9,'Glorious Model D - White','Glorious Gaming',69,0,'https://images.maxgaming.com/data/product/600f480/glorious_model_d_gamingmus_vit.jpg');
+	(9,'Glorious Model D - White','Glorious Gaming',69,0,'https://images.maxgaming.com/data/product/600f480/glorious_model_d_gamingmus_vit.jpg'),
+	(12,'Razer DeathAdder V290','Razer',9,0,'https://i.imgur.com/yvzx8H8.jpg');
 
 /*!40000 ALTER TABLE `computerMice` ENABLE KEYS */;
 UNLOCK TABLES;
