@@ -20,7 +20,7 @@ function displayMouseOnPage(array $mice): string
 
 function linkDB(): PDO
 {
-    $db = new PDO('mysql:host=DB;dbname=collectionproject', 'root', 'password');
+    $db = new PDO('mysql:host=DB;dbname=collection.project', 'root', 'password');
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     return $db;
 }
@@ -39,18 +39,41 @@ function formatName(string $name): string
     return $name;
 }
 
-function validateInfo(string $mouseName,string $mouseBrand,string $mouseWeight): string
+function checkInputLength(string $mouseName, string $mouseBrand, string $mouseWeight): bool
 {
-    if ((strlen($mouseName) > 100) || (strlen($mouseBrand) > 50) || ($mouseWeight > 1000) || ($mouseWeight < 1)) {
-        return 'inputLength';
-    } elseif (!(filter_var($mouseWeight, FILTER_VALIDATE_INT))) {
-        return 'integer';
-    } elseif ((!(preg_match("/^([a-zA-Z0-9- ]+)$/", $mouseName))) || (!(preg_match("/^([a-zA-Z0-9- ]+)$/", $mouseBrand)))) {
-        return 'invalidName';
+    if ((strlen($mouseName) > 100) || (strlen($mouseBrand) > 50) || ($mouseWeight > 999) || ($mouseWeight < 1)) {
+        return true;
     } else {
-        return 'true';
+        return false;
     }
 
+}
+
+function validateWeight(string $mouseWeight): bool
+{
+    if (!(filter_var($mouseWeight, FILTER_VALIDATE_INT))) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function validateNames(string $mouseName, string $mouseBrand): bool
+{
+    if ((!(preg_match("/^([a-zA-Z0-9- ]+)$/", $mouseName))) || (!(preg_match("/^([a-zA-Z0-9- ]+)$/", $mouseBrand)))) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function validateWirelessInput (int $isWireless): bool
+{
+    if (($isWireless == 1) || ($isWireless == 0)) {
+        return false;
+    } else {
+        return true;
+    }
 }
 
 
