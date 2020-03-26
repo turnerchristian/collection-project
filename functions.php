@@ -43,39 +43,25 @@ function formatName(string $name): string
 
 function checkInputLength(string $mouseName, string $mouseBrand, int $mouseWeight): bool
 {
-    if ((strlen($mouseName) > 100) || (strlen($mouseBrand) > 50) || ($mouseWeight > 999) || ($mouseWeight < 1)) {
-        return true;
-    } else {
-        return false;
-    }
+    return ((strlen($mouseName) > 100) || (strlen($mouseBrand) > 50) || ($mouseWeight > 999) || ($mouseWeight < 1));
 
 }
 
 function validateWeight(int $mouseWeight): bool
 {
-    if (!(filter_var($mouseWeight, FILTER_VALIDATE_INT))) {
-        return true;
-    } else {
-        return false;
-    }
+    return (!(filter_var($mouseWeight, FILTER_VALIDATE_INT)));
 }
 
 function validateNames(string $mouseName, string $mouseBrand): bool
 {
-    if ((!(preg_match("/^([a-zA-Z0-9- ]+)$/", $mouseName))) || (!(preg_match("/^([a-zA-Z0-9- ]+)$/", $mouseBrand)))) {
-        return true;
-    } else {
-        return false;
-    }
+    return ((!(preg_match("/^([a-zA-Z0-9- ]+)$/", $mouseName))) || (!(preg_match("/^([a-zA-Z0-9- ]+)$/", $mouseBrand))));
 }
+
+
 
 function validateWirelessInput (int $isWireless): bool
 {
-    if (($isWireless === 1) || ($isWireless === 0)) {
-        return false;
-    } else {
-        return true;
-    }
+    return (!(($isWireless === 1) || ($isWireless === 0)));
 }
 
 

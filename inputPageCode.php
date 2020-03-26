@@ -12,7 +12,12 @@ if (!empty($_POST['mouseName']) &&
     $mouseName = $_POST['mouseName'];
     $mouseBrand = $_POST['mouseBrand'];
     $mouseWeight = (int)$_POST['mouseWeight'];
-    $isWireless = $_POST['wirelessInput'];
+    if (is_bool($_POST['wirelessInput'])) {
+        header('Location: ./inputPage.php?error=inputLength');
+        exit;
+    } else {
+        $isWireless = $_POST['wirelessInput'];
+    }
     $mouseName = formatName($mouseName);
     $mouseBrand = formatName($mouseBrand);
 } else {
@@ -41,8 +46,12 @@ if (checkInputLength($_POST['mouseName'], $_POST['mouseBrand'], $_POST['mouseWei
         exit;
     } else {
         $query = $db->prepare("INSERT INTO `computerMice` (`name` ,`brand`, `weight`, `is_wireless`) 
-        VALUES (mouseName = ?, mouseBrand =  ?,mouseWeight = ?, is_wireless = ?)");
-        $result = $query->execute([$mouseName, $mouseBrand, $mouseWeight, $isWireless]);
+        VALUES (:name, :brand, :weight, :wireless)");
+        $query->bindParam(':name', $mouseName);
+        $query->bindParam(':brand', $mouseBrand);
+        $query->bindParam(':weight', $mouseWeight);
+        $query->bindParam(':wireless', $isWireless);
+        $result = $query->execute();
     }
     if ($result) {
         $_SESSION['success']['mouseName'] = $mouseName;
