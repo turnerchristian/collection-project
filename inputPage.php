@@ -8,14 +8,14 @@ require_once('session.php');
 <head>
     <title>Add a mouse</title>
     <?php
-    include_once('HTMLhead.php');
+    require_once('includes/HTMLhead.php');
     ?>
 </head>
 
 <body>
 <nav>
     <?php
-    require_once('HTMLnav.php');
+    require_once('includes/HTMLnav.php');
     ?>
 </nav>
 <main class="inputPageMain">

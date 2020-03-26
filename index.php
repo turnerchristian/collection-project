@@ -11,7 +11,7 @@ $mice = getDataFromDB($db);
 
 <head>
     <?php
-include_once('HTMLhead.php');
+    require_once('includes/HTMLhead.php');
 ?>
     <title>Mouse Collection</title>
 </head>
@@ -19,7 +19,7 @@ include_once('HTMLhead.php');
 <body>
 <nav>
     <?php
-    require_once('HTMLnav.php');
+    require_once('includes/HTMLnav.php');
     ?>
 </nav>
 <main>
