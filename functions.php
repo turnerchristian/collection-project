@@ -1,4 +1,6 @@
 <?php
+declare(strict_types = 1);
+
 function displayMouseOnPage(array $mice): string
 {
     $echo = '';
@@ -39,7 +41,7 @@ function formatName(string $name): string
     return $name;
 }
 
-function checkInputLength(string $mouseName, string $mouseBrand, string $mouseWeight): bool
+function checkInputLength(string $mouseName, string $mouseBrand, int $mouseWeight): bool
 {
     if ((strlen($mouseName) > 100) || (strlen($mouseBrand) > 50) || ($mouseWeight > 999) || ($mouseWeight < 1)) {
         return true;
@@ -49,7 +51,7 @@ function checkInputLength(string $mouseName, string $mouseBrand, string $mouseWe
 
 }
 
-function validateWeight(string $mouseWeight): bool
+function validateWeight(int $mouseWeight): bool
 {
     if (!(filter_var($mouseWeight, FILTER_VALIDATE_INT))) {
         return true;
@@ -69,7 +71,7 @@ function validateNames(string $mouseName, string $mouseBrand): bool
 
 function validateWirelessInput (int $isWireless): bool
 {
-    if (($isWireless == 1) || ($isWireless == 0)) {
+    if (($isWireless === 1) || ($isWireless === 0)) {
         return false;
     } else {
         return true;

@@ -1,14 +1,17 @@
 <?php
-require_once('session.php');
 require_once('functions.php');
+require_once('session.php');
 
 $db = linkDB();
 $mice = getDataFromDB($db);
 
-if (!empty($_POST['mouseName']) && !empty($_POST['mouseBrand']) && !empty($_POST['mouseWeight']) && !empty($_POST['wirelessInput'])) {
+if (!empty($_POST['mouseName']) &&
+    !empty($_POST['mouseBrand']) &&
+    !empty($_POST['mouseWeight']) &&
+    ((($_POST['wirelessInput']) == 1) || (($_POST['wirelessInput']) == 0))) {
     $mouseName = $_POST['mouseName'];
     $mouseBrand = $_POST['mouseBrand'];
-    $mouseWeight = $_POST['mouseWeight'];
+    $mouseWeight = (int)$_POST['mouseWeight'];
     $isWireless = $_POST['wirelessInput'];
     $mouseName = formatName($mouseName);
     $mouseBrand = formatName($mouseBrand);
@@ -37,10 +40,11 @@ if (checkInputLength($_POST['mouseName'], $_POST['mouseBrand'], $_POST['mouseWei
         header('Location: ./inputPage.php?error=exists');
         exit;
     } else {
-        $query = $db->prepare("INSERT INTO `computerMice` (`name` ,`brand`, `weight`, `is_wireless`) VALUES (?, ?, ?, ?)");
+        $query = $db->prepare("INSERT INTO `computerMice` (`name` ,`brand`, `weight`, `is_wireless`) 
+        VALUES (mouseName = ?, mouseBrand =  ?,mouseWeight = ?, is_wireless = ?)");
         $result = $query->execute([$mouseName, $mouseBrand, $mouseWeight, $isWireless]);
     }
-    if ($result === true) {
+    if ($result) {
         $_SESSION['success']['mouseName'] = $mouseName;
         header('Location: ./index.php?success=mouseAdded');
         exit;

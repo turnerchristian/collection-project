@@ -8,7 +8,7 @@ require_once('session.php');
 <head>
     <title>Add a mouse</title>
     <?php
-    require_once('HTMLhead.php');
+    include_once('HTMLhead.php');
     ?>
 </head>
 
@@ -32,15 +32,15 @@ require_once('session.php');
             </label>
             <label>
                 Weight (g):
-                <input name="mouseWeight" type="text" pattern="[0-9]*" placeholder= "Range: 1-1000 (g)" maxlength="10" required/>
+                <input name="mouseWeight" type="text" pattern="[0-9]*" placeholder= "Range: 1-999 (g)" maxlength="10" required/>
             </label>
             <label id="wirelessLabel">
                 Is it Wireless?
                 <div class="wirelessDiv">
-                    <input type="radio" name="wirelessInput" value="yes" required>
+                    <input type="radio" name="wirelessInput" value="1" required>
                     Yes
                     </input>
-                    <input type="radio" name="wirelessInput" value="no">
+                    <input type="radio" name="wirelessInput" value="0">
                     No
                     </input>
                 </div>
